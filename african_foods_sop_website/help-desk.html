@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AFC internal IT Standard Operating Procedures">
+  <title>Service Desk Procedures | African Foods Company</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="African Foods Company SOP Portal home">
+      <span class="brand-mark" aria-hidden="true">AFC</span>
+      <span><strong>African Foods Company</strong><small>Internal IT SOP Portal</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" >Home</a>
+      <a href="security.html" >Security</a>
+      <a href="acceptable-use.html" >Acceptable Use</a>
+      <a href="acquisition.html" >Acquisition</a>
+      <a href="help-desk.html" aria-current="page">Help Desk</a>
+      <a href="disaster-recovery.html" >Disaster Recovery</a>
+      <a href="document-control.html" >Document Control</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <a class="back-link" href="index.html">← Back to SOP Home</a>
+  <div class="page-intro"><span class="pill">Procedure</span><h1>Service Desk / Help Desk Procedures</h1><p>The service desk is the central point for IT support across Cape Town, Durban, Gqeberha and Polokwane.</p></div>
+  <div class="content-layout"><article class="content-card">
+    <h2>How to log a ticket</h2><ol>
+      <li>Use the organisation’s approved ticketing system or designated support contact. If unavailable, use the approved backup contact method.</li>
+      <li>Include your name, site, contact details, device/service, time the issue began, symptoms, error message and business impact.</li>
+      <li>Do not include passwords, VPN keys or other secrets in a ticket.</li>
+      <li>The service desk assigns a ticket number, priority, owner and status and confirms receipt.</li>
+    </ol>
+    <h2>Proposed priority and initial response targets</h2><p class="small">These are recommendations for the WIL project, not confirmed existing service commitments. Management should approve them before use.</p>
+    <table><thead><tr><th>Priority</th><th>Example</th><th>Initial response</th><th>Action</th></tr></thead><tbody>
+      <tr><td><strong>P1 Critical</strong></td><td>Multiple sites offline, ERP/database unavailable, major suspected security incident.</td><td>Within 15 minutes during supported hours.</td><td>Immediate escalation to IT Manager and relevant administrator; update management.</td></tr>
+      <tr><td><strong>P2 High</strong></td><td>One site or major department affected; VPN repeatedly failing.</td><td>Within 1 business hour.</td><td>Prioritise investigation and notify affected site manager.</td></tr>
+      <tr><td><strong>P3 Normal</strong></td><td>Single user printing or routine application issue.</td><td>Within 1 business day.</td><td>Resolve through normal queue.</td></tr>
+      <tr><td><strong>P4 Low / request</strong></td><td>Non-urgent advice, standard request or planned change.</td><td>Within 2 business days.</td><td>Schedule based on workload and approvals.</td></tr>
+    </tbody></table>
+    <h2>Initial troubleshooting</h2><ul>
+      <li>Check whether one user, one site or multiple sites are affected.</li><li>For basic connectivity, check power, cable/link lights, Wi-Fi connection and whether the device has a network address.</li>
+      <li>For a branch-wide issue, escalate to the network administrator to check the router/firewall, VPN and ISP status.</li><li>For ERP problems, report whether the service is unreachable or the application itself is showing an error. The network design identifies the ERP/database server as 10.10.90.10.</li>
+      <li>Do not make unauthorised changes to firewalls, VPNs, VLANs, DHCP or production servers.</li>
+    </ul>
+    <h2>Escalation and closure</h2><ol><li>Escalate security, server, VPN and multi-site issues promptly.</li><li>Record tests, actions, approvals and the outcome in the ticket.</li><li>Confirm service restoration with the user before closing.</li><li>For repeated problems, record the likely root cause and recommend a permanent fix.</li></ol>
+    <div class="notice"><strong>Security incident?</strong> Report it immediately. Do not delete evidence, wipe a device or reconnect an isolated device without IT instruction.</div>
+    <p class="meta">Owner: Service Desk Lead / IT Manager · Status: Proposed — confirm targets and official contact details before launch.</p>
+  </article><aside class="side-card"><h2>Related pages</h2><a href="security.html">Security Incident Guidance</a><a href="disaster-recovery.html">Disaster Recovery</a><a href="index.html">SOP Directory</a></aside></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><strong>African Foods Company (AFC)</strong><br><span class="small" style="color:#d8e4ed">Internal SOP reference website — proposed for team implementation.</span></div>
+    <div><a href="index.html">SOP Home</a> · <a href="document-control.html">Document Control</a></div>
+  </div>
+</footer>
+</body>
+</html>

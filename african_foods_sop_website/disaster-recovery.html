@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AFC internal IT Standard Operating Procedures">
+  <title>Disaster Recovery | African Foods Company</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="African Foods Company SOP Portal home">
+      <span class="brand-mark" aria-hidden="true">AFC</span>
+      <span><strong>African Foods Company</strong><small>Internal IT SOP Portal</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" >Home</a>
+      <a href="security.html" >Security</a>
+      <a href="acceptable-use.html" >Acceptable Use</a>
+      <a href="acquisition.html" >Acquisition</a>
+      <a href="help-desk.html" >Help Desk</a>
+      <a href="disaster-recovery.html" aria-current="page">Disaster Recovery</a>
+      <a href="document-control.html" >Document Control</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <a class="back-link" href="index.html">← Back to SOP Home</a>
+  <div class="page-intro"><span class="pill">Recovery</span><h1>Disaster Recovery & Business Continuity</h1><p>Recommended actions to help AFC respond to IT outages and restore critical services safely.</p></div>
+  <div class="notice"><strong>Safety first:</strong> In a fire, flood or other physical emergency, follow site emergency procedures and protect people before equipment. Notify management and emergency services where appropriate.</div>
+  <div class="content-layout"><article class="content-card">
+    <h2>Recommended recovery targets</h2><p class="small">Planning estimates only. AFC management and service owners must validate these targets against business impact, cost, backup capacity and vendor capability.</p>
+    <table><thead><tr><th>Service</th><th>Proposed recovery time (RTO)</th><th>Proposed recovery point (RPO)</th></tr></thead><tbody>
+      <tr><td>ERP/database server</td><td>8 hours</td><td>4 hours</td></tr><tr><td>Core network, firewall and VPN</td><td>4 hours for critical links</td><td>Latest saved configuration; target 24 hours maximum</td></tr>
+      <tr><td>DHCP/DNS network services</td><td>4 hours</td><td>Latest configuration backup</td></tr><tr><td>Public website</td><td>8 hours</td><td>24 hours for site content</td></tr><tr><td>User PCs and printers</td><td>1–2 business days</td><td>Store user data in approved backed-up services</td></tr>
+    </tbody></table>
+    <p><strong>RTO</strong> is the target time to restore a service. <strong>RPO</strong> is the maximum target data-loss window measured in time.</p>
+    <h2>Scenario response guide</h2>
+    <h3>Internet or VPN outage</h3><ul><li>Log a high-priority ticket and identify affected sites.</li><li>Check whether the fault is local or provider-wide; contact the ISP.</li><li>Use an approved backup circuit if available and verify ERP access after restoration.</li></ul>
+    <h3>ERP/database failure</h3><ul><li>Notify the IT Manager and business leads; record errors.</li><li>Restore to approved replacement infrastructure or recover from backup.</li><li>Confirm database integrity and application access with the system owner before reopening service.</li></ul>
+    <h3>Ransomware or suspected malware</h3><ul><li>Isolate affected devices from the network where safe and possible.</li><li>Report immediately; do not wipe devices or reconnect them.</li><li>Preserve evidence, assess the scope, rebuild from trusted sources and restore clean backups only after security clearance.</li></ul>
+    <h3>Router, switch or firewall failure</h3><ul><li>Record the site and services affected.</li><li>Use compatible replacement equipment and the latest approved configuration backup.</li><li>Verify VLANs, VPN tunnels, DHCP relay, QoS and local internet breakout.</li></ul>
+    <h3>Power outage, fire or flood</h3><ul><li>Follow safety procedures and keep staff away from unsafe equipment.</li><li>Use UPS protection for short-term power events where installed and supported.</li><li>Use protected off-site backups and supplier support to restore services at a safe location.</li></ul>
+    <h3>Website outage or compromise</h3><ul><li>Notify IT and preserve logs.</li><li>Restore clean website files and content, patch the service and review DMZ/firewall rules.</li><li>Check that internal systems were not exposed.</li></ul>
+    <h2>Backup and testing checklist</h2><ul>
+      <li>Back up ERP/database data, website content, DHCP/network settings and firewall/router/VPN configurations.</li><li>Where feasible, keep multiple backup copies, use different storage systems and maintain at least one protected off-site or offline/immutable copy.</li><li>Encrypt sensitive backups and restrict access.</li><li>Monitor backup jobs and investigate failures.</li><li>Test file/database restoration at least quarterly and after major changes; record the results and corrective actions.</li><li>Maintain an approved emergency contact list for IT, management, ISP, hardware suppliers and ERP support.</li></ul>
+    <h2>Recommended recovery order</h2><ol><li>Confirm staff safety and decide whether to activate disaster recovery.</li><li>Identify affected sites, systems and security risks; appoint an incident lead.</li><li>Restore power and core connectivity, then firewall/routing and VPNs.</li><li>Restore required network services such as DHCP relay and name resolution.</li><li>Restore ERP/database and verify data integrity.</li><li>Restore the public website separately in the DMZ.</li><li>Test access from each site, ERP reachability, internet, Wi-Fi and printing.</li><li>Communicate service status and complete a post-incident review.</li></ol>
+    <p class="meta">Owner: IT Manager · Status: Proposed — recovery targets and backup arrangements require management approval and testing.</p>
+  </article><aside class="side-card"><h2>Related pages</h2><a href="help-desk.html">Log / escalate an issue</a><a href="security.html">Security policy</a><a href="document-control.html">Document control</a></aside></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><strong>African Foods Company (AFC)</strong><br><span class="small" style="color:#d8e4ed">Internal SOP reference website — proposed for team implementation.</span></div>
+    <div><a href="index.html">SOP Home</a> · <a href="document-control.html">Document Control</a></div>
+  </div>
+</footer>
+</body>
+</html>
