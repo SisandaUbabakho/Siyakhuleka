@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Main directory for African Foods Company IT standard operating procedures.">
+  <title>SOP Portal Home | African Foods Company</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="African Foods Company SOP Portal home">
+      <span class="brand-mark" aria-hidden="true">AFC</span>
+      <span><strong>African Foods Company</strong><small>Internal IT SOP Portal</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="security.html" >Security</a>
+      <a href="acceptable-use.html" >Acceptable Use</a>
+      <a href="acquisition.html" >Acquisition</a>
+      <a href="help-desk.html" >Help Desk</a>
+      <a href="disaster-recovery.html" >Disaster Recovery</a>
+      <a href="document-control.html" >Document Control</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Cape Town · Durban · Gqeberha · Polokwane</span>
+    <h1>One place for the procedures that keep AFC connected.</h1>
+    <p>Use this portal to find the proposed IT policies and operating procedures for African Foods Company. Follow the approved version published by the organisation and contact the service desk when you need help.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#sop-directory">Browse SOPs</a>
+      <a class="button button-secondary" href="help-desk.html">Get IT support</a>
+    </div>
+  </div>
+</section>
+<main id="main">
+  <div class="notice"><strong>Important:</strong> This is a demonstration static website created for the WIL Task 2 project. Policies, response targets and recovery objectives must be reviewed and formally approved by AFC management before being treated as official company policy.</div>
+  <section id="sop-directory">
+    <div class="page-intro">
+      <h1>Standard Operating Procedures</h1>
+      <p>Select a topic below. Each page summarises the relevant procedure for AFC’s head office in Cape Town and branches in Durban, Gqeberha and Polokwane.</p>
+    </div>
+    <div class="search-wrap">
+      <label for="sop-search">Search the SOP directory</label>
+      <input id="sop-search" type="search" placeholder="Try “password”, “ticket”, “purchase” or “backup”…" autocomplete="off">
+      <p id="search-status" class="search-status" aria-live="polite">Showing all SOP topics.</p>
+    </div>
+    <div class="card-grid" id="sop-cards">
+      <a class="card" data-search="security password mfa access network vpn data incident" href="security.html"><span class="icon" aria-hidden="true">🔐</span><h2>IT Security Policy</h2><p>Accounts, access control, devices, network protection and incident reporting.</p><span class="card-link">Open security SOP →</span></a>
+      <a class="card" data-search="acceptable use software internet email prohibited employee" href="acceptable-use.html"><span class="icon" aria-hidden="true">🧭</span><h2>Acceptable Use Policy</h2><p>Rules for using company devices, internet, email, software and business information.</p><span class="card-link">Open acceptable use →</span></a>
+      <a class="card" data-search="acquisition procurement hardware software quote approval purchase order" href="acquisition.html"><span class="icon" aria-hidden="true">🛒</span><h2>IT Acquisition</h2><p>How to request, assess, approve, receive and register IT purchases.</p><span class="card-link">Open acquisition SOP →</span></a>
+      <a class="card" data-search="help desk service desk ticket printer internet vpn erp escalation" href="help-desk.html"><span class="icon" aria-hidden="true">🛠️</span><h2>Service Desk / Help Desk</h2><p>How to log a ticket, set priorities, troubleshoot and escalate issues.</p><span class="card-link">Open help desk SOP →</span></a>
+      <a class="card" data-search="disaster recovery backup restore ransomware vpn server power outage" href="disaster-recovery.html"><span class="icon" aria-hidden="true">♻️</span><h2>Disaster Recovery</h2><p>Recommended responses to outages, data loss, malware and site disruption.</p><span class="card-link">Open recovery SOP →</span></a>
+      <a class="card" data-search="document control version approval owner review history staff structure" href="document-control.html"><span class="icon" aria-hidden="true">📋</span><h2>Document Control & IT Structure</h2><p>Ownership, reporting lines, version control and review responsibilities.</p><span class="card-link">Open document control →</span></a>
+    </div>
+  </section>
+  <h2 class="section-title">Quick guidance</h2>
+  <div class="card-grid">
+    <div class="card"><span class="pill">Security incident</span><h3>Act quickly</h3><p>Report suspected malware, phishing, lost devices or data exposure to the service desk immediately. Do not delete evidence or reconnect an isolated device.</p></div>
+    <div class="card"><span class="pill">Network outage</span><h3>Describe the impact</h3><p>When raising a ticket, state your site, the service affected, when it started and whether other colleagues are affected.</p></div>
+    <div class="card"><span class="pill">Policy status</span><h3>Check the version</h3><p>Before following a procedure, check its owner, approval status, version and review date on the Document Control page.</p></div>
+  </div>
+</main>
+<script>
+const search = document.getElementById('sop-search');
+const cards = [...document.querySelectorAll('#sop-cards .card')];
+const status = document.getElementById('search-status');
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLowerCase();
+  let shown = 0;
+  cards.forEach(card => {
+    const haystack = (card.innerText + ' ' + (card.dataset.search || '')).toLowerCase();
+    const match = haystack.includes(q);
+    card.hidden = !match;
+    if (match) shown++;
+  });
+  status.textContent = q ? `${shown} SOP topic${shown === 1 ? '' : 's'} found.` : 'Showing all SOP topics.';
+});
+</script>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><strong>African Foods Company (AFC)</strong><br><span class="small" style="color:#d8e4ed">Internal SOP reference website — proposed for team implementation.</span></div>
+    <div><a href="index.html">SOP Home</a> · <a href="document-control.html">Document Control</a></div>
+  </div>
+</footer>
+</body>
+</html>
